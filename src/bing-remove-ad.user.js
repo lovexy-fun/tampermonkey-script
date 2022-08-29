@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name         Bing去广告
-// @namespace    http://lovexy.fun/
-// @version      0.0.1
-// @description  去除Bing搜索结果的广告
-// @author       lovexy-fun
-// @match        https://cn.bing.com/search*
-// @icon         https://cn.bing.com/favicon.ico
-// @grant        none
-// @run-at       document-end
+// @name        Bing去广告
+// @namespace   http://lovexy.fun/
+// @version     0.0.1
+// @description 去除Bing搜索结果的广告
+// @author      lovexy-fun
+// @match       https://cn.bing.com/search*
+// @icon        https://cn.bing.com/favicon.ico
+// @grant       none
+// @run-at      document-end
+// @supportURL  https://github.com/lovexy-fun/tampermonkey-script/issues
+// @updateURL   https://github.com/lovexy-fun/tampermonkey-script/raw/master/src/bing-remove-ad.user.js
 // ==/UserScript==
 
 (function () {
