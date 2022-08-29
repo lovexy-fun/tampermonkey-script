@@ -9,6 +9,7 @@
 // @grant       none
 // @supportURL  https://github.com/lovexy-fun/tampermonkey-script/issues
 // @updateURL   https://github.com/lovexy-fun/tampermonkey-script/raw/master/src/csdn-optimizer.user.js
+// @downloadURL https://github.com/lovexy-fun/tampermonkey-script/raw/master/src/csdn-optimizer.user.js
 // ==/UserScript==
 
 (function () {

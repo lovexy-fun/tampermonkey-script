@@ -10,6 +10,7 @@
 // @run-at      document-end
 // @supportURL  https://github.com/lovexy-fun/tampermonkey-script/issues
 // @updateURL   https://github.com/lovexy-fun/tampermonkey-script/raw/master/src/bing-remove-ad.user.js
+// @downloadURL https://github.com/lovexy-fun/tampermonkey-script/raw/master/src/bing-remove-ad.user.js
 // ==/UserScript==
 
 (function () {
