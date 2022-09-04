@@ -4,7 +4,7 @@
 // @version     1.1.0
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
-// @match       https://blog.csdn.net/*
+// @match       https://blog.csdn.net/*/article/*
 // @icon        https://blog.csdn.net/favicon.ico
 // @grant       none
 // @supportURL  https://github.com/lovexy-fun/tampermonkey-script/issues
@@ -53,9 +53,14 @@
 
     /* 不登录复制按钮生效 */
     try {
+        [...document.getElementsByTagName("code")].forEach(i => {
+            if ($(i).attr("onclick") === "mdcp.signin(event)") {
+                $(i).attr("onclick", "mdcp.copyCode(event)");
+            }
+        });
         [...document.getElementsByClassName("hljs-button")].forEach(i => {
-            if ($(i).attr("onclick") == "hljs.signin(event)") {
-                $(i).attr("data-title", "复制");
+            $(i).attr("data-title", "复制");
+            if ($(i).attr("onclick") === "hljs.signin(event)") {
                 $(i).attr("onclick", "hljs.copyCode(event)");
             }
         });   
