@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        CSDN博客优化
 // @namespace   http://lovexy.fun/
-// @version     1.1.0
+// @version     1.1.1
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
 // @match       https://blog.csdn.net/*/article/*
