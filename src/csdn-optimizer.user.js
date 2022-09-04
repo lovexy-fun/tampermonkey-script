@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        CSDN博客优化
 // @namespace   http://lovexy.fun/
-// @version     1.0.0
+// @version     1.1.0
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
 // @match       https://blog.csdn.net/*
@@ -49,6 +49,18 @@
         );
     } catch (error) {
         console.error({msg: "去掉复制版权尾巴错误", err: error});
+    }
+
+    /* 不登录复制按钮生效 */
+    try {
+        [...document.getElementsByClassName("hljs-button")].forEach(i => {
+            if ($(i).attr("onclick") == "hljs.signin(event)") {
+                $(i).attr("data-title", "复制");
+                $(i).attr("onclick", "hljs.copyCode(event)");
+            }
+        });   
+    } catch (error) {
+        console.error({msg: "不登录复制按钮生效错误", err: error});
     }
 
 })();
