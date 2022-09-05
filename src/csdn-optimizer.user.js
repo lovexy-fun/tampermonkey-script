@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        CSDN博客优化
 // @namespace   http://lovexy.fun/
-// @version     1.1.1
+// @version     1.2.1
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
 // @match       https://blog.csdn.net/*/article/*
@@ -66,6 +66,24 @@
         });   
     } catch (error) {
         console.error({msg: "不登录复制按钮生效错误", err: error});
+    }
+
+    /* 自动关闭登录弹出框 */
+    try {
+        new MutationObserver((elements, observer) => {
+            [...elements].forEach(i => {
+                i.addedNodes.forEach(j => {
+                    if ($(j).attr("class") === "passport-login-container") {
+                        console.log("自动关闭登录");
+                        $(j).remove();
+                    }
+                })
+            });
+        }).observe($("body")[0], {
+            childList: true
+        });
+    } catch (error) {
+        console.error({msg: "自动关闭登录错误", err: error});
     }
 
 })();
