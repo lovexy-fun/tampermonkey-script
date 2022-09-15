@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        CSDN博客优化
 // @namespace   http://lovexy.fun/
-// @version     1.2.1
+// @version     1.2.2
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
 // @match       https://blog.csdn.net/*/article/*
@@ -37,6 +37,8 @@
         $(".csdn-side-toolbar ").remove();//移除侧边工具按钮
         $("main").width("100%");//放大主体文章部分
         $("body").css('background', 'rgb(245,246,247)');//修改背景色
+        $("#treeSkill").remove();//移除相关知识点学习
+        $("#dmp_ad_58").remove();//移除广告
     } catch (error) {
         console.error({msg: "优化界面错误", err: error});
     }
