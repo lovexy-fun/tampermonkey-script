@@ -4,6 +4,7 @@
 // @version     1.2.2
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
+// @license     MIT
 // @match       https://blog.csdn.net/*/article/*
 // @icon        https://blog.csdn.net/favicon.ico
 // @grant       none

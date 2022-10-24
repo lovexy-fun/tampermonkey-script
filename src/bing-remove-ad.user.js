@@ -4,6 +4,7 @@
 // @version     0.0.1
 // @description 去除Bing搜索结果的广告
 // @author      lovexy-fun
+// @license     MIT
 // @match       https://cn.bing.com/search*
 // @icon        https://cn.bing.com/favicon.ico
 // @grant       none
