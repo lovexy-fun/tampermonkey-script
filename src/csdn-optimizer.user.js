@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        CSDN博客优化
 // @namespace   http://lovexy.fun/
-// @version     1.2.2
+// @version     1.2.3
 // @description 优化CSDN博客展示
 // @author      lovexy-fun
 // @license     MIT
@@ -52,6 +52,17 @@
         );
     } catch (error) {
         console.error({msg: "去掉复制版权尾巴错误", err: error});
+    }
+
+    try {
+        $("#content_views").unbind("keydown").bind("keydown", function (e) {
+            return true
+        });
+        $("#content_views").unbind("copy").bind("copy", function (e) {
+            return true
+        });
+    } catch (error) {
+        console.error({msg: "解除文章复制限制失败", err: error});
     }
 
     /* 不登录复制按钮生效 */
