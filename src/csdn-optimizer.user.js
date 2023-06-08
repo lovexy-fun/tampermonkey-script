@@ -21,9 +21,9 @@
         $("#content_views pre").css("user-select", "text");
         $("#content_views pre code").css("user-select", "text");
     } catch (error) {
-        console.error({msg: "解除复制限制错误", err: error});
+        console.error({ msg: "解除复制限制错误", err: error });
     }
-    
+
 
     /* 优化界面 */
     try {
@@ -37,32 +37,38 @@
         $("#tool-share").remove();//移除分享
         $(".csdn-side-toolbar ").remove();//移除侧边工具按钮
         $("main").width("100%");//放大主体文章部分
-        $("body").css('background', 'rgb(245,246,247)');//修改背景色
         $("#treeSkill").remove();//移除相关知识点学习
         $("#dmp_ad_58").remove();//移除广告
     } catch (error) {
-        console.error({msg: "优化界面错误", err: error});
-    }
-    
-    /* 去掉复制版权尾巴 */
-    try {
-        [...document.getElementsByTagName("article")].forEach( i => {
-            i.oncopy = e => e.stopPropagation();
-            }
-        );
-    } catch (error) {
-        console.error({msg: "去掉复制版权尾巴错误", err: error});
+        console.error({ msg: "优化界面错误", err: error });
     }
 
+    /* 去掉复制版权尾巴 */
     try {
-        $("#content_views").unbind("keydown").bind("keydown", function (e) {
-            return true
-        });
-        $("#content_views").unbind("copy").bind("copy", function (e) {
-            return true
-        });
+        [...document.getElementsByTagName("article")].forEach(i => {
+            i.oncopy = e => e.stopPropagation();
+        }
+        );
     } catch (error) {
-        console.error({msg: "解除文章复制限制失败", err: error});
+        console.error({ msg: "去掉复制版权尾巴错误", err: error });
+    }
+
+    /* 解除不登录复制文章文本（非代码）限制 */
+    try {
+        $("#content_views")
+            .unbind("keydown")
+            .unbind("copy");
+    } catch (error) {
+        console.error({ msg: "解除文章复制限制失败", err: error });
+    }
+
+    /* 去掉选中文本后弹出的tips */
+    try {
+        $("#content_views")
+            .unbind("mouseup")
+            .unbind("mousedown");
+    } catch (error) {
+        console.error({ msg: "去除文本选中tips失败", err: error });
     }
 
     /* 不登录复制按钮生效 */
@@ -77,9 +83,9 @@
             if ($(i).attr("onclick") === "hljs.signin(event)") {
                 $(i).attr("onclick", "hljs.copyCode(event)");
             }
-        });   
+        });
     } catch (error) {
-        console.error({msg: "不登录复制按钮生效错误", err: error});
+        console.error({ msg: "不登录复制按钮生效错误", err: error });
     }
 
     /* 自动关闭登录弹出框 */
@@ -97,7 +103,7 @@
             childList: true
         });
     } catch (error) {
-        console.error({msg: "自动关闭登录错误", err: error});
+        console.error({ msg: "自动关闭登录错误", err: error });
     }
 
 })();
